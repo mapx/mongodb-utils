@@ -4,7 +4,7 @@ mongodb-utils
 Mongodb utilities.
 
 <table>
-  <tr><th colspan="2" style="text-align:center;">Improved BSONObj builder macros</th></tr>
+  <tr><th colspan="2" style="text-align:center;">Improved BSONObj Builder Macros</th></tr>
   <tr>
     <td><code>BSONS</code></td>
     <td><p>A macro to build a BSONObj of custom initial buffer size from a stream to reduce memory allocation times.</p>
@@ -22,12 +22,12 @@ Mongodb utilities.
   <tr>
     <td><code>BSONS_ARRAY</code></td>
     <td><p>Use BSONS_ARRAY macro like BSONS macro, but without keys</p>
-    <p><code>BSONArray arr = BSONS_ARRAY(128, "hello" &lt;&lt; 1 &lt;&lt;
-        BSON("foo" &lt;&lt; BSONS_ARRAY(32, "bar" &lt;&lt; "baz" &lt;&lt; "qux" ) ) );</code></p>
+    <pre><code>BSONArray arr = BSONS_ARRAY(128, "hello" &lt;&lt; 1 &lt;&lt;
+        BSON("foo" &lt;&lt; BSONS_ARRAY(32, "bar" &lt;&lt; "baz" &lt;&lt; "qux" ) ) );</code></pre>
 
   </td>
   </tr>
-  <tr><th colspan="2" style="text-align:center;">Debug helpers</th></tr>
+  <tr><th colspan="2" style="text-align:center;">Debug Helpers</th></tr>
   <tr>
     <td><code>SHOW_BSON_BOB</code></td>
     <td>Print bson::bob object content only in DEBUG mode.</td>
