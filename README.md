@@ -7,28 +7,24 @@ Mongodb utilities.
   <tr><th colspan="2" style="text-align:center;">Improved BSONObj builder macros</th></tr>
   <tr>
     <td><code>BSONS</code></td>
-    <td><pre>Use BSONS macro to build a BSONObj of custom initial buffer size from a stream to reduce memory allocation times.
-
-    e.g.,
-       <code>BSONS(32, "name" << "joe" << "age" << 33 )</code>
-
-    with auto-generated object id:
-       <code>BSONS(64, GENOID << "name" << "joe" << "age" << 33 )</code>
-    when size is 64, it is the same as:
-       <code>BSON(GENOID << "name" << "joe" << "age" << 33 )</code>
-
-    The labels GT, GTE, LT, LTE, NE can be helpful for stream-oriented construction
-    of a BSONObj, particularly when assembling a Query.  For example,
-    <code>BSONS(96, "a" << GT << 23.4 << NE << 30 << "b" << 2 )</code> produces the object
-    <code>{ a: { $gt: 23.4, $ne: 30 }, b: 2 }.</code>
-</pre>
+    <td><p>Use BSONS macro to build a BSONObj of custom initial buffer size from a stream to reduce memory allocation times.</p>
+<p>e.g.,</p><p><code>BSONS(32, "name" &lt;&lt; "joe" &lt;&lt; "age" &lt;&lt; 33 )</code></p>
+    <p>with auto-generated object id:</p>
+       <p><code>BSONS(64, GENOID &lt;&lt; "name" &lt;&lt; "joe" &lt;&lt; "age" &lt;&lt; 33 )</code></p>
+    <p>when size is 64, it is the same as:</p>
+       <p><code>BSON(GENOID &lt;&lt; "name" &lt;&lt; "joe" &lt;&lt; "age" &lt;&lt; 33 )</code></p>
+    <p>The labels GT, GTE, LT, LTE, NE can be helpful for stream-oriented construction
+    of a BSONObj, particularly when assembling a Query.  For example,</p>
+    <p><code>BSONS(96, "a" &lt;&lt; GT &lt;&lt; 23.4 &lt;&lt; NE &lt;&lt; 30 &lt;&lt; "b" &lt;&lt; 2 )</code> produces the object
+    <code>{ a: { $gt: 23.4, $ne: 30 }, b: 2 }.</code></p>
 </td>
   </tr>
   <tr>
     <td><code>BSONS_ARRAY</code></td>
-    <td><pre>Use BSONS_ARRAY macro like BSONS macro, but without keys
-    <code>BSONArray arr = BSONS_ARRAY(128, "hello" << 1 <<
-        BSON("foo" << BSONS_ARRAY(32, "bar" << "baz" << "qux" ) ) );</code></pre>
+    <td><p>Use BSONS_ARRAY macro like BSONS macro, but without keys</p>
+    <p><code>BSONArray arr = BSONS_ARRAY(128, "hello" &lt;&lt; 1 &lt;&lt;
+        BSON("foo" &lt;&lt; BSONS_ARRAY(32, "bar" &lt;&lt; "baz" &lt;&lt; "qux" ) ) );</code></p>
+
   </td>
   </tr>
   <tr><th colspan="2" style="text-align:center;">Debug helpers</th></tr>
