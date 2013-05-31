@@ -7,7 +7,7 @@ Mongodb utilities.
   <tr><th colspan="2" style="text-align:center;">Improved BSONObj builder macros</th></tr>
   <tr>
     <td><code>BSONS</code></td>
-    <td><p>Use BSONS macro to build a BSONObj of custom initial buffer size from a stream to reduce memory allocation times.</p>
+    <td><p>A macro to build a BSONObj of custom initial buffer size from a stream to reduce memory allocation times.</p>
 <p>e.g.,</p><p><code>BSONS(32, "name" &lt;&lt; "joe" &lt;&lt; "age" &lt;&lt; 33 )</code></p>
     <p>with auto-generated object id:</p>
        <p><code>BSONS(64, GENOID &lt;&lt; "name" &lt;&lt; "joe" &lt;&lt; "age" &lt;&lt; 33 )</code></p>
@@ -16,7 +16,7 @@ Mongodb utilities.
     <p>The labels GT, GTE, LT, LTE, NE can be helpful for stream-oriented construction
     of a BSONObj, particularly when assembling a Query.  For example,</p>
     <p><code>BSONS(96, "a" &lt;&lt; GT &lt;&lt; 23.4 &lt;&lt; NE &lt;&lt; 30 &lt;&lt; "b" &lt;&lt; 2 )</code> produces the object
-    <code>{ a: { $gt: 23.4, $ne: 30 }, b: 2 }.</code></p>
+    <code>{ a: { $gt: 23.4, $ne: 30 }, b: 2 }</code>.</p>
 </td>
   </tr>
   <tr>
