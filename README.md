@@ -20,6 +20,10 @@ Mongodb utilities.
 </td>
   </tr>
   <tr>
+    <td><code>QUERYS</code></td>
+    <td><p><code>QUERY</code>'s custom initsize version.</p></td>
+  </tr>
+  <tr>
     <td><code>BSONS_ARRAY</code></td>
     <td><p>Use BSONS_ARRAY macro like BSONS macro, but without keys</p>
     <pre><code>BSONArray arr = BSONS_ARRAY(128, "hello" &lt;&lt; 1 &lt;&lt;
