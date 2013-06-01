@@ -9,6 +9,9 @@
 // where BSON and BOSN_ARRAY is defined
 #include <bson/bsonmisc.h>
 
+// for QUERYS macro
+#include <mongo/client/dbclientinterface.h>
+
 
 /** Use BSONS macro to build a BSONObj of custom initial buffer size from a stream
     to reduce memory allocation times.
@@ -27,7 +30,7 @@
     { a: { \$gt: 23.4, \$ne: 30 }, b: 2 }.
 */
 #define BSONS(size, x) (( mongo::BSONObjBuilder(size) << x ).obj())
-
+#define QUERYS(size, x) mongo::Query( BSONS(size, x) )
 
 /** Use BSONS_ARRAY macro like BSONS macro, but without keys
 
