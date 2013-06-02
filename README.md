@@ -34,15 +34,19 @@ Mongodb utilities.
   <tr><th colspan="2" style="text-align:center;">Debug Helpers</th></tr>
   <tr>
     <td><code>SHOW_BSON_BOB</code></td>
-    <td>Print bson::bob object content only in DEBUG mode.</td>
+    <td>Print bson::bob object content in DEBUG mode.</td>
   </tr>
   <tr>
     <td><code>SHOW_BSON_BO</code></td>
-    <td>Print bson::bo object content only in DEBUG mode.</td>
+    <td>Print bson::bo object content in DEBUG mode.</td>
   </tr>
   <tr>
     <td><code>SHOW_BSON_BE</code></td>
-    <td>Print bson::be object content only in DEBUG mode.</td>
+    <td>Print bson::be object content in DEBUG mode.</td>
+  </tr>
+  <tr>
+    <td><code>SHOW_MONGODB_LASTERR</code></td>
+    <td>Print a mongodb connection's last error in DEBUG mode.</td>
   </tr>
 </table>
 
