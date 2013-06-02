@@ -79,5 +79,13 @@
       (b).objsize(), \
       (b).toString().c_str()))
 
+/**
+ * Print LastError of mongodb connection.
+ * Only available in DEBUG mode.
+ */
+#define SHOW_MONGODB_LASTERR(c) assert(printf("%s:%d lasterr=%s\n", \
+      __FILE__, __LINE__, \
+      (c).getLastErrorDetailed(false, true).jsonString().c_str()))
+  
 #endif
 
